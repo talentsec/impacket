@@ -1,4 +1,4 @@
-FROM python:3.8-alpine as compile
+FROM python:3.10-alpine as compile
 WORKDIR /opt
 RUN apk add --no-cache git gcc musl-dev python3-dev libffi-dev openssl-dev cargo
 RUN python3 -m pip install virtualenv
@@ -21,7 +21,7 @@ wget https://github.com/carlospolop/PEASS-ng/releases/download/20220605/winPEASx
 wget https://github.com/carlospolop/PEASS-ng/releases/download/20220605/winPEASx86.exe && \
 wget https://github.com/carlospolop/PEASS-ng/releases/download/20220605/winPEASx86_ofs.exe
 
-FROM python:3.8-alpine
+FROM python:3.10-alpine
 COPY --from=compile /opt/venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 ENTRYPOINT ["/bin/sh"]
