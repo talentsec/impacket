@@ -19,7 +19,7 @@ wget https://github.com/carlospolop/PEASS-ng/releases/download/20220605/winPEASa
 wget https://github.com/carlospolop/PEASS-ng/releases/download/20220605/winPEASx64.exe && \
 wget https://github.com/carlospolop/PEASS-ng/releases/download/20220605/winPEASx64_ofs.exe && \
 wget https://github.com/carlospolop/PEASS-ng/releases/download/20220605/winPEASx86.exe && \
-wget https://github.com/carlospolop/PEASS-ng/releases/download/20220605/winPEASx86_ofs.exe.exe
+wget https://github.com/carlospolop/PEASS-ng/releases/download/20220605/winPEASx86_ofs.exe
 
 FROM python:3.8-alpine
 COPY --from=compile /opt/venv /opt/venv
