@@ -5,7 +5,7 @@ RUN python3 -m pip install virtualenv
 RUN virtualenv -p python venv
 ENV PATH="/opt/venv/bin:$PATH"
 RUN git clone --depth 1 https://github.com/SecureAuthCorp/impacket.git
-RUN python3 -m pip install impacket/
+RUN python3 -m pip install impacket/ && python3 -m pip install paramiko
 
 FROM python:3.8-alpine
 COPY --from=compile /opt/venv /opt/venv
