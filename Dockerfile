@@ -10,6 +10,7 @@ RUN python3 -m pip install impacket/ && python3 -m pip install paramiko
 
 FROM python:3.10-alpine
 COPY --from=compile /opt/venv /opt/venv
+COPY --from=compile /opt/impacket/parsers /opt
 RUN wget https://github.com/carlospolop/PEASS-ng/releases/download/20220605/linpeas.sh -P /opt && \
 wget https://github.com/carlospolop/PEASS-ng/releases/download/20220605/linpeas_darwin_amd64 -P /opt && \
 wget https://github.com/carlospolop/PEASS-ng/releases/download/20220605/linpeas_darwin_arm64 -P /opt && \
