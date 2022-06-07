@@ -257,7 +257,7 @@ class RemoteShell(cmd.Cmd):
     def get_output(self):
         def output_callback(data):
             try:
-                self.__outputBuffer += data.decode('utf-8')
+                self.__outputBuffer += data.decode('gbk')
             except UnicodeDecodeError:
                 logging.error('Decoding error detected, consider running chcp.com at the target,\nmap the result with '
                               'https://docs.python.org/3/library/codecs.html#standard-encodings\nand then execute wmiexec.py '
